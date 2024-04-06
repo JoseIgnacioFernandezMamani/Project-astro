@@ -1,0 +1,39 @@
+---
+// Importa los módulos necesarios
+import PostCard from "../components/PostCard.astro";
+import { type Post } from "./types/interfaces";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+// Obtiene los posts del API
+const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+const posts: Post[] = await res.json();
+---
+
+<html>
+  <head>
+    <title>Mi Blog en Astro</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <Header />
+      <h1>Bienvenido a mi Blog</h1>
+
+      <div class="post-container">
+        {posts.map((post: Post) => <PostCard key={post.id} post={post} />)}
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style>
+  .main-container {
+    display: flex; /* Habilita Flexbox */
+    flex-direction: column; /* Los elementos se apilan verticalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center;
+  }
+  body {
+    background: #dcdcdc;
+  }
+</style>

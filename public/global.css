@@ -1,0 +1,31 @@
+html{
+  background: rgb(34,193,195);
+  background: linear-gradient(62deg, rgba(34,193,195,1) 0%, rgba(154,225,242,0.9556197478991597) 100%);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  h1, h2 {
+    color: #444;
+  }
+  
+  
